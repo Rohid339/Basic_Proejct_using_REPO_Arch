@@ -107,6 +107,29 @@ const EmployeeList = () => {
           ))}
         </tbody>
       </table>
+      <div
+  style={{
+    textAlign: "center",
+    marginTop: "20px",
+  }}
+>
+  <Link to="/employees/create">
+    <button
+      style={{
+        backgroundColor: "#10b981",
+        color: "white",
+        border: "none",
+        padding: "10px 20px",
+        borderRadius: "6px",
+        cursor: "pointer",
+        fontSize: "15px",
+        fontWeight: "600",
+      }}
+    >
+      + Create Employee
+    </button>
+  </Link>
+</div>
     </div>
   );
 };

@@ -64,7 +64,7 @@ const DepartmentFormPage = () => {
   return (
     <div style={container}>
       <form onSubmit={handleSubmit} style={formBox}>
-        <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+        <h2 style={{ textAlign: "center", color: "#041837",marginBottom: "20px" }}>
           {isEdit ? "Edit Department" : "Create Department"}
         </h2>
 

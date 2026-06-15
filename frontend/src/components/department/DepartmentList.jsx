@@ -39,7 +39,13 @@ function DepartmentList() {
           boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
         }}
       >
-        <h2 style={{ textAlign: "center",color: "#0da38a",marginBottom: "20px" }}>
+        <h2
+          style={{
+            textAlign: "center",
+            color: "#0da38a",
+            marginBottom: "20px",
+          }}
+        >
           Department List
         </h2>
 
@@ -87,6 +93,29 @@ function DepartmentList() {
             ))}
           </tbody>
         </table>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "20px",
+          }}
+        >
+          <Link to="/department/create">
+            <button
+              style={{
+                background: "#10b981",
+                color: "white",
+                border: "none",
+                padding: "10px 20px",
+                borderRadius: "6px",
+                cursor: "pointer",
+                fontSize: "15px",
+                fontWeight: "600",
+              }}
+            >
+              + Create Department
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

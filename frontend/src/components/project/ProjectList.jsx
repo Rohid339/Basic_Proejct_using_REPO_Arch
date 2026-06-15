@@ -39,7 +39,13 @@ function ProjectList() {
           boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
         }}
       >
-        <h2 style={{ textAlign: "center",color: "#5c0773", marginBottom: "20px" }}>
+        <h2
+          style={{
+            textAlign: "center",
+            color: "#5c0773",
+            marginBottom: "20px",
+          }}
+        >
           Project List
         </h2>
 
@@ -89,6 +95,29 @@ function ProjectList() {
             ))}
           </tbody>
         </table>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "20px",
+          }}
+        >
+          <Link to="/project/create">
+            <button
+              style={{
+                background: "#10b981",
+                color: "white",
+                border: "none",
+                padding: "10px 20px",
+                borderRadius: "6px",
+                cursor: "pointer",
+                fontSize: "15px",
+                fontWeight: "600",
+              }}
+            >
+              + Create Project
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

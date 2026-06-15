@@ -72,7 +72,7 @@ const EmployeeFormPage = () => {
   return (
     <div style={container}>
       <form onSubmit={handleSubmit} style={formBox}>
-        <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+        <h2 style={{ textAlign: "center",color: "#041837", marginBottom: "20px" }}>
           {isEdit ? "Edit Employee" : "Create Employee"}
         </h2>
 
@@ -148,34 +148,39 @@ const container = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  background: "#f4f6f9",
+  background: "linear-gradient(135deg, #e0e7ff, #f8fafc)",
+  padding: "20px",
 };
 
 const formBox = {
   width: "100%",
-  maxWidth: "450px",
-  background: "white",
-  padding: "25px",
-  borderRadius: "10px",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+  maxWidth: "500px",
+  background: "#ffffff",
+  padding: "35px",
+  borderRadius: "18px",
+  boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
 };
 
 const input = {
   width: "100%",
-  padding: "12px",
-  marginBottom: "12px",
-  border: "1px solid #ddd",
-  borderRadius: "6px",
+  padding: "14px",
+  marginBottom: "15px",
+  border: "1px solid #d1d5db",
+  borderRadius: "10px",
+  fontSize: "15px",
+  boxSizing: "border-box",
   outline: "none",
 };
 
 const button = {
   width: "100%",
-  padding: "12px",
+  padding: "14px",
   background: "#2563eb",
   color: "white",
   border: "none",
-  borderRadius: "6px",
+  borderRadius: "10px",
   cursor: "pointer",
-  fontWeight: "bold",
+  fontWeight: "600",
+  fontSize: "16px",
+  marginTop: "10px",
 };
