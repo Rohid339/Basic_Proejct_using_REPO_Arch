@@ -1,12 +1,18 @@
-from sqlalchemy import Column,String,Integer
-from sqlalchemy.orm import declarative_base
+from sqlalchemy import Column,String,Integer,ForeignKey
+from sqlalchemy.orm import relationship
+from app.models.base_model import Base
 
-Base = declarative_base()
+
 
 class Project(Base):
-    __tablename__="Project"
+    __tablename__="PROJECT"
+    __table_args__={"schema":"dbo"}
 
     project_id=Column(Integer,primary_key=True)
-    projectName=Column(String)
-    employee_id=Column(Integer)
-    status=Column(String)
+    project_name=Column(String)
+    P_status=Column(String)
+
+    employee_id=Column(Integer,ForeignKey("dbo.EMPLOYEE.ID"))
+
+    employee = relationship("Employee",back_populates="project")
+

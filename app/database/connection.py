@@ -5,17 +5,24 @@ from sqlalchemy.orm import sessionmaker
 
 load_dotenv()
 
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_HOST = os.getenv("DB_HOST")
-DB_PORT = os.getenv("DB_PORT")
-DB_NAME = os.getenv("DB_NAME")
-DB_DRIVER = os.getenv("DB_DRIVER")
+# DB_USER = os.getenv("DB_USER")
+# DB_PASSWORD = os.getenv("DB_PASSWORD")
+# DB_HOST = os.getenv("DB_HOST")
+# DB_PORT = os.getenv("DB_PORT")
+# DB_NAME = os.getenv("DB_NAME")
+# DB_DRIVER = os.getenv("DB_DRIVER")
+
+# DATABASE_URL = (
+#     f"mssql+pyodbc://{DB_USER}:{DB_PASSWORD}"
+#     f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+#     f"?driver={DB_DRIVER.replace(' ', '+')}"
+# )
+# DATABASE_URL = os.getenv("DATABASE_URL")
 
 DATABASE_URL = (
-    f"mssql+pyodbc://{DB_USER}:{DB_PASSWORD}"
-    f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-    f"?driver={DB_DRIVER.replace(' ', '+')}"
+    "mssql+pyodbc://@localhost\\SQLEXPRESS/EMPLOYEE"
+    "?driver=ODBC+Driver+17+for+SQL+Server"
+    "&trusted_connection=yes"
 )
 
 engine = create_engine(DATABASE_URL)

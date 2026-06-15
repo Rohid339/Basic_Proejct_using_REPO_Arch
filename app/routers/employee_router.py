@@ -1,16 +1,44 @@
 from fastapi import APIRouter,Depends
 from sqlalchemy.orm import  Session
 
-from database.connection import get_db
-from services.employee_services import fetch_employees,add_employee
-from schemas.employee_schema import EmployeeCreate
+from app.database.connection import get_db
+from app.controller.employee_controller import EmployeeController
+from app.schemas.employee_schema import EmployeeCreate
 
 router=APIRouter()
+employee_controller = EmployeeController()
 
 @router.get("/")
-def get_employees(db:Session=Depends(get_db)):
-    return fetch_employees(db)
+def get_all_employees(
+    db: Session = Depends(get_db)
+):
+    return employee_controller.get_all_emp(db)
 
 @router.post("/")
-def create_employee(employee:EmployeeCreate,db:Session=Depends(get_db)):
-    return add_employee(db,employee)
+def create_employee(
+    employee: EmployeeCreate,
+    db: Session = Depends(get_db)
+):
+    return employee_controller.create_emp(
+        db,
+        employee
+    )
+
+@router.put("/{id}")
+def update_employee(
+    id:int,
+    employee:EmployeeCreate,
+    db:Session = Depends(get_db)
+):
+    return employee_controller.update_emp(
+        db,
+        id,
+        employee
+    )
+
+@router.delete("/{emp_id}")
+def delete_employee(
+    emp_id:int,
+    db:Session=Depends(get_db)
+):
+    return employee_controller.delete_emp(db,emp_id)
