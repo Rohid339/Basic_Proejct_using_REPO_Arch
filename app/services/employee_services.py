@@ -19,7 +19,7 @@ class EmployeeServices:
         return employee_repo.get_by_id(db, emp_id)
 
     def create_employee(self, db, employee):
-        return employee_repo.create(db, employee)
+        return employee_repo.createEmployee(db, employee)
 
     def delete_employee(self, db, emp_id):
         return employee_repo.delete(db, emp_id)

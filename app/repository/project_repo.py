@@ -7,5 +7,6 @@ class ProjectRepository(BaseRepository):
 
     def get_by_id(self,db,id):
         return db.query(self.model).filter(
-            self.model.project_id==id
+            self.model.project_id==id,
+            self.model.IS_DELETED == False
         ).first()

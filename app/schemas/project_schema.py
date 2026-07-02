@@ -8,10 +8,11 @@ class ProjectCreate(BaseModel):
 
 
 class ProjectResponse(BaseModel):
-    # project_id:int
+    project_id:int
     project_name:str
     employee_id:int
     P_status:str
+    IS_DELETED : bool
 
     class Config:
         from_attributes=True

@@ -6,9 +6,11 @@ class DepartMentCreate(BaseModel):
     budget:str
 
 class DepartMentResponse(BaseModel):
-    # Dept_id:int
+    Dept_id:int
     dept_name:str
     budget:str
+    IS_DELETED: bool
+
 
     class Config:
         from_attributes=True

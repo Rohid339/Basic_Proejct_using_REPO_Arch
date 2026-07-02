@@ -14,6 +14,13 @@ def get_all_employees(
 ):
     return employee_controller.get_all_emp(db)
 
+@router.get("/{id}")
+def get_Emp_by_id(
+    id:int,
+    db: Session = Depends(get_db)
+):
+    return employee_controller.get_imp_by_id(db,id)
+
 @router.post("/")
 def create_employee(
     employee: EmployeeCreate,

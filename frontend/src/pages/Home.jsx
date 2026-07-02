@@ -69,6 +69,14 @@ function Home() {
           <Link to="/projects" style={{ textDecoration: "none" }}>
             <button style={buttonStyle}>📁 Project Management</button>
           </Link>
+
+          <Link to="/audit" style={{ textDecoration: "none" }}>
+            <button style={buttonStyle}>📁 Audit </button>
+          </Link>
+          <Link to="/designation" style={{ textDecoration: "none" }}>
+            <button style={buttonStyle}>Designation </button>
+          </Link>
+
         </div>
       </div>
     </div>

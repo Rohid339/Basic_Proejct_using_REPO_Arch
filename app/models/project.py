@@ -1,4 +1,4 @@
-from sqlalchemy import Column,String,Integer,ForeignKey
+from sqlalchemy import Column,String,Integer,Boolean,ForeignKey
 from sqlalchemy.orm import relationship
 from app.models.base_model import Base
 
@@ -11,6 +11,7 @@ class Project(Base):
     project_id=Column(Integer,primary_key=True)
     project_name=Column(String)
     P_status=Column(String)
+    IS_DELETED = Column(Boolean,default=False)
 
     employee_id=Column(Integer,ForeignKey("dbo.EMPLOYEE.ID"))
 

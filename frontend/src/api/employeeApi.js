@@ -11,6 +11,9 @@ export const createEmployee=(data)=>{
 export const updateEmployee=(id,data)=>{
     return axiosClient.put(`/employees/${id}`,data)
 }
+export const getEmployeeById = (id) => {
+  return axiosClient.get(`/employees/${id}`);
+};
 
 export const deleteEmployee=(id)=>{
     return axiosClient.delete(`/employees/${id}`);

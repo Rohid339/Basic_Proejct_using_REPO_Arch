@@ -15,6 +15,13 @@ import CreateDepartment from "../pages/CreateDepartment";
 import { EditDepartment } from "../components/department/EditDepartment";
 import DepartmentPage from "../pages/DepartmentPage";
 import ProjectPage from "../pages/ProjectPage";
+import AuditPage from "../pages/AuditPage";
+
+import DesignationForm from "../components/Designation/DesignationForm";
+import { CreateDesignation } from "../pages/CreateDesignation";
+import { DesignationPage } from "../pages/DesignationPage";
+
+
 
 function AppRoutes() {
 
@@ -77,6 +84,22 @@ function AppRoutes() {
                 <Route
                     path="/project/edit/:id"
                     element={<EditProject />}
+                />
+                <Route
+                    path="/audit"
+                    element={<AuditPage />}
+                />
+
+                {/* Designation */}
+
+                <Route
+                    path="/designation"
+                    element={<DesignationPage />}
+                />
+
+                <Route
+                    path="/designation/create"
+                    element={<CreateDesignation />}
                 />
 
             </Routes>

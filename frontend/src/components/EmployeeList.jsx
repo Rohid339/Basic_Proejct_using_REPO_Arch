@@ -25,18 +25,12 @@ const EmployeeList = () => {
   return (
     <div
       style={{
-        maxWidth: "1000px",
+        maxWidth: "1200px",
         margin: "40px auto",
         padding: "20px",
       }}
     >
-      <h2
-        style={{
-          textAlign: "center",
-          marginBottom: "20px",
-          color: "#af9008",
-        }}
-      >
+      <h2 style={{ textAlign: "center", marginBottom: "20px", color: "#af9008" }}>
         Employee List
       </h2>
 
@@ -53,8 +47,19 @@ const EmployeeList = () => {
         <thead>
           <tr style={{ backgroundColor: "#2563eb", color: "white" }}>
             <th style={thStyle}>ID</th>
+            <th style={thStyle}>EMP CODE</th>
             <th style={thStyle}>Name</th>
             <th style={thStyle}>Email</th>
+            <th style={thStyle}>Salary</th>
+            <th style={thStyle}>Status</th>
+            <th style={thStyle}>Manager ID</th>
+            <th style={thStyle}>Dept ID</th>
+            <th style={thStyle}>Designation ID</th>
+            <th style={thStyle}>Created At</th>
+
+            {/* ✅ NEW COLUMN */}
+            <th style={thStyle}>Is Deleted</th>
+
             <th style={thStyle}>Actions</th>
           </tr>
         </thead>
@@ -69,8 +74,24 @@ const EmployeeList = () => {
               }}
             >
               <td style={tdStyle}>{emp.ID}</td>
+              <td style={tdStyle}>{emp.EMP_CODE}</td>
               <td style={tdStyle}>{emp.NAME}</td>
               <td style={tdStyle}>{emp.EMAIL}</td>
+              <td style={tdStyle}>{emp.SALARY}</td>
+              <td style={tdStyle}>{emp.STATUS}</td>
+              <td style={tdStyle}>
+                {emp.MANAGER_ID ? emp.MANAGER_ID : "-"}
+              </td>
+              <td style={tdStyle}>{emp.DEPT_ID}</td>
+              <td style={tdStyle}>{emp.designation_id}</td>
+              <td style={tdStyle}>
+                {emp.CREATED_AT ? emp.CREATED_AT : "-"}
+              </td>
+
+              {/* ✅ NEW FIELD */}
+              <td style={tdStyle}>
+                {emp.IS_DELETED ? "Yes" : "No"}
+              </td>
 
               <td style={tdStyle}>
                 <Link to={`edit/${emp.ID}`}>
@@ -107,29 +128,25 @@ const EmployeeList = () => {
           ))}
         </tbody>
       </table>
-      <div
-  style={{
-    textAlign: "center",
-    marginTop: "20px",
-  }}
->
-  <Link to="/employees/create">
-    <button
-      style={{
-        backgroundColor: "#10b981",
-        color: "white",
-        border: "none",
-        padding: "10px 20px",
-        borderRadius: "6px",
-        cursor: "pointer",
-        fontSize: "15px",
-        fontWeight: "600",
-      }}
-    >
-      + Create Employee
-    </button>
-  </Link>
-</div>
+
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <Link to="/employees/create">
+          <button
+            style={{
+              backgroundColor: "#10b981",
+              color: "white",
+              border: "none",
+              padding: "10px 20px",
+              borderRadius: "6px",
+              cursor: "pointer",
+              fontSize: "15px",
+              fontWeight: "600",
+            }}
+          >
+            + Create Employee
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
